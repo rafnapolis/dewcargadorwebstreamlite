@@ -28,7 +28,7 @@ if st.button("Procesar y Descargar"):
                         ydl_opts = {
                             'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
                             'outtmpl': os.path.join(temp_dir, '%(title)s.%(ext)s'),
-                            'noplaylist': True,  # Evita descargar listas de reproducción o radios automáticas
+                            'noplaylist': True,
                         }
                     else: # Audio (MP3)
                         ydl_opts = {
@@ -39,7 +39,7 @@ if st.button("Procesar y Descargar"):
                                 'preferredquality': '192',
                             }],
                             'outtmpl': os.path.join(temp_dir, '%(title)s.%(ext)s'),
-                            'noplaylist': True,  # Evita descargar listas de reproducción o radios automáticas
+                            'noplaylist': True,
                         }
 
                     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
