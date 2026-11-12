@@ -29,6 +29,9 @@ if st.button("Procesar y Descargar"):
                             'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
                             'outtmpl': os.path.join(temp_dir, '%(title)s.%(ext)s'),
                             'noplaylist': True,
+                            'geo_bypass': True,
+                            'nocheckcertificate': True,
+                            'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                         }
                     else: # Audio (MP3)
                         ydl_opts = {
@@ -40,6 +43,9 @@ if st.button("Procesar y Descargar"):
                             }],
                             'outtmpl': os.path.join(temp_dir, '%(title)s.%(ext)s'),
                             'noplaylist': True,
+                            'geo_bypass': True,
+                            'nocheckcertificate': True,
+                            'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                         }
 
                     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
